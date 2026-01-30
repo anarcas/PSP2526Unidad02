@@ -13,7 +13,8 @@ public class Restaurante {
     // Declaración variables
     private int numComensalesSab = 25;
     private int numComensalesDom = 25;
-    private boolean reserva=false;
+    private boolean reserva = false;
+    private boolean cerrado = false;
 
     // Métodos getters y setters
     public int getNumComensalesSab() {
@@ -40,35 +41,41 @@ public class Restaurante {
         this.reserva = reserva;
     }
 
-    
-    
+    public boolean isCerrado() {
+        return cerrado;
+    }
+
+    public void setCerrado(boolean cerrado) {
+        this.cerrado = cerrado;
+    }
+
     // Método sincronizado realizarReserva()
-    public boolean realizarReserva(int dia, int numComensales, String nombreCliente) {
+    public synchronized boolean realizarReserva(int dia, int numComensales, String nombreCliente) {
         switch (dia) {
 
             case 1:
-                if ((getNumComensalesSab() - numComensales) >= 0) {
-                    setNumComensalesSab(getNumComensalesSab() - numComensales);
+                if ((this.getNumComensalesSab() - numComensales) >= 0 && !this.isCerrado()) {
+                    this.setNumComensalesSab(this.getNumComensalesSab() - numComensales);
                     // Establecer reserva
-                    System.out.println(establecerReserva(nombreCliente, dia, numComensales));
-                    setReserva(true);
+                    System.out.println(this.establecerReserva(nombreCliente, dia, numComensales));
+                    this.setReserva(true);
                 } else {
                     // Rechazar reserva
-                    System.out.println(rechazarReserva(nombreCliente, dia, numComensales));
-                    setReserva(false);
+                    System.out.println(this.rechazarReserva(nombreCliente, dia, numComensales));
+                    this.setReserva(false);
                 }
                 break;
 
             case 2:
-                if ((getNumComensalesDom() - numComensales) >= 0) {
-                    setNumComensalesDom(getNumComensalesDom() - numComensales);
+                if ((this.getNumComensalesDom() - numComensales) >= 0 && !this.isCerrado()) {
+                    this.setNumComensalesDom(this.getNumComensalesDom() - numComensales);
                     // Establecer reserva
-                    System.out.println(establecerReserva(nombreCliente, dia, numComensales));
-                    setReserva(true);
+                    System.out.println(this.establecerReserva(nombreCliente, dia, numComensales));
+                    this.setReserva(true);
                 } else {
                     // Rechazar reserva
-                    System.out.println(rechazarReserva(nombreCliente, dia, numComensales));
-                    setReserva(false);
+                    System.out.println(this.rechazarReserva(nombreCliente, dia, numComensales));
+                    this.setReserva(false);
                 }
                 break;
 
@@ -77,9 +84,14 @@ public class Restaurante {
         }
 
         // Actualización de variables
-        System.out.println(String.format("\tPlazas restantes: Sábado = %d, Domingo = %d.", getNumComensalesSab(), getNumComensalesDom()));
+        System.out.println(String.format("\tPlazas restantes: Sábado = %d, Domingo = %d.", this.getNumComensalesSab(), this.getNumComensalesDom()));
         
-        return isReserva();
+        // Si el número de comensales restantes es inferior a 2 se cierran las reservas
+        if (this.getNumComensalesSab()<2 && this.getNumComensalesDom()<2){
+            this.setCerrado(true);
+        }
+
+        return this.isReserva();
     }
 
     // Método establecerReserva()

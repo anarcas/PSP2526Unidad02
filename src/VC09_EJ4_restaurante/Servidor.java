@@ -37,7 +37,7 @@ public class Servidor {
             while (true) {
 
                 Socket s = ss.accept();
-                System.out.println("Conexión establecida.");
+                //System.out.println("Conexión establecida.");
 
                 hiloServidor = new Thread(new HiloServidor(s, besana,contadorClientesAtendidos));
                 contadorClientesAtendidos++;

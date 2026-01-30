@@ -49,8 +49,17 @@ public class HiloServidor implements Runnable {
 
             // ENVIO 01
             // Nombre del cliente
-            nombreCliente=String.format("Cliente%d",getNumClienteAtendido());
+            nombreCliente=String.format("Cliente%d",this.getNumClienteAtendido());
             pw.println(nombreCliente);
+            
+            if (this.restaurante.isCerrado()){
+            
+                System.out.println(String.format("No quedan plazas %s, se cierran las reservas.",nombreCliente));
+                // ENVIO 02
+                pw.println("Las reservas están cerradas.");
+                
+            } else{
+            
             // ENVIO 02
             pw.println("¿Para qué día desea reservar? (Sábado o Domingo)");
             // ENVIO 03
@@ -63,6 +72,8 @@ public class HiloServidor implements Runnable {
             // Realizar la reserva
             pw.println(String.valueOf(this.restaurante.realizarReserva(dia, numComensales, nombreCliente)));
 
+            }
+            
             // Cierre de recursos
             br.close();
             pw.close();

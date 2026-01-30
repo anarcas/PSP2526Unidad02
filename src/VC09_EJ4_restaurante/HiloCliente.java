@@ -46,25 +46,29 @@ public class HiloCliente implements Runnable {
             // Nombre del cliente
             nombre = br.readLine();
             // RECIBIDO 02
-            br.readLine();
-            // RECIBIDO 03
-            br.readLine();
-            // ENVIO 01
-            // Elegir el día de la reserva (número aleatorio entre 1:Sábado y 2:Domingo)
-            dia = String.valueOf((int) (Math.random() * 2 + 1));
-            pw.println(dia);
-            // ENVIO 02
-            // Elegir el número de comensales (número aleatorio entre 2 y 6)
-            //numComensales = String.valueOf((int) (Math.random() * 5 + 2));
-            numComensales = String.valueOf((int) (Math.random() * 6 + 1));
-            pw.println(numComensales);
-            // RECIBIDO 04
-            br.readLine();
-            // Imprimir mensaje en consola
-            System.out.println(String.format("%s solicita mesa para %d comensales para el %s.",
-                    nombre,
-                    Integer.parseInt(numComensales),
-                    (dia.equalsIgnoreCase("1")) ? "Sábado" : "Domingo"));
+            if (!br.readLine().contains("cerradas")) {
+                // RECIBIDO 03
+                br.readLine();
+                // ENVIO 01
+                // Elegir el día de la reserva (número aleatorio entre 1:Sábado y 2:Domingo)
+                dia = String.valueOf((int) (Math.random() * 2 + 1));
+                pw.println(dia);
+                // ENVIO 02
+                // Elegir el número de comensales (número aleatorio entre 2 y 6)
+                numComensales = String.valueOf((int) (Math.random() * 5 + 2));
+                //numComensales = String.valueOf((int) (Math.random() * 6 + 1));
+                pw.println(numComensales);
+                // RECIBIDO 04
+                br.readLine();
+
+                // Imprimir mensaje en consola
+                System.out.println(String.format("%s solicita mesa para %d comensales para el %s.",
+                        nombre,
+                        Integer.parseInt(numComensales),
+                        (dia.equalsIgnoreCase("1")) ? "Sábado" : "Domingo"));
+            } else {
+                System.out.println(String.format("%s se marcha porque no hay reservas, volverá otro día.", nombre));
+            }
 
             // Cierre de recursos
             s.close();
