@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ3_hermanos_pollos/Servidor.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ2_farmacia/SimuladorClientes.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ2_farmacia/Cliente.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ3_hermanos_pollos/HiloCliente.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ3_hermanos_pollos/Polleria.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC08_EJ04_EJ02/Servidor.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ3_hermanos_pollos/GestorHilosClientes.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ2_farmacia/HiloServidor.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC08_EJ04_EJ02/Cliente.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ3_hermanos_pollos/HiloServidor.java</file>
-            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ2_farmacia/Servidor.java</file>
+            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ4_restaurante/Servidor.java</file>
+            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ4_restaurante/HiloCliente.java</file>
+            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ4_restaurante/HiloServidor.java</file>
+            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ4_restaurante/Restaurante.java</file>
+            <file>file:/C:/Users/anaranjo/dam/2526/2526_PSP_U02/src/VC09_EJ4_restaurante/SimuladorClientes.java</file>
         </group>
     </open-files>
 </project-private>
